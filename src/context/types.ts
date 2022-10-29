@@ -22,7 +22,7 @@ export type AppContextActionsTypes = {
 	changeFilter: (filter: FilterType) => void;
 
 	/**
-	 * change the task filter
+	 * toggle complete task
 	 * @param taskId
 	 */
 	toggleTaskCompleted: (taskId: string) => void;

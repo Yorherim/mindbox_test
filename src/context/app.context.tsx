@@ -26,7 +26,10 @@ export const AppContextProvider: React.FC<AppContextProviderPropsType> = ({ chil
 			setTasks([...tasks, { id: nanoid(), title, completed: false }]);
 		},
 
-		changeFilter: (filter: FilterType) => setFilter(filter),
+		changeFilter: (filter: FilterType) => {
+			console.log(filter);
+			setFilter(filter);
+		},
 
 		toggleTaskCompleted: (taskId: string) => {
 			setTasks(
