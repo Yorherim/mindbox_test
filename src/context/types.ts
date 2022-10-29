@@ -22,13 +22,13 @@ export type AppContextActionsTypes = {
 	changeFilter: (filter: FilterType) => void;
 
 	/**
-	 * toggle complete task
+	 * toggle complete task (set task active or completed)
 	 * @param taskId
 	 */
 	toggleTaskCompleted: (taskId: string) => void;
 
 	/**
-	 * clear completed tasks
+	 * delete completed tasks from todolist
 	 */
 	clearCompletedTasks: () => void;
 };

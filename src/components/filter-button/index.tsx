@@ -5,6 +5,10 @@ import { AppContext } from '../../context/app.context';
 import styles from './FilterButton.module.scss';
 import { FilterButtonPropsType } from './types';
 
+/**
+ * filter button in todolist
+ * @component
+ */
 export const FilterButton: React.FC<FilterButtonPropsType> = ({ title, filter }) => {
 	const {
 		filter: currentFilter,

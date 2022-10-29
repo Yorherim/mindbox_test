@@ -27,13 +27,12 @@ export const AppContextProvider: React.FC<AppContextProviderPropsType> = ({ chil
 		},
 
 		changeFilter: (filter: FilterType) => {
-			console.log(filter);
 			setFilter(filter);
 		},
 
 		toggleTaskCompleted: (taskId: string) => {
 			setTasks(
-				tasks.map((task) => (task.id === taskId ? { ...task, isDone: !task.completed } : task)),
+				tasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task)),
 			);
 		},
 
