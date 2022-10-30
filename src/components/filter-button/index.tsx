@@ -9,7 +9,7 @@ import { FilterButtonPropsType } from './types';
  * filter button in todolist
  * @component
  */
-export const FilterButton: React.FC<FilterButtonPropsType> = ({ title, filter }) => {
+export const FilterButton: React.FC<FilterButtonPropsType> = ({ title, filter, dataTestId }) => {
 	const {
 		filter: currentFilter,
 		actions: { changeFilter },
@@ -19,6 +19,7 @@ export const FilterButton: React.FC<FilterButtonPropsType> = ({ title, filter })
 		<button
 			className={clsx(currentFilter === filter && styles.active)}
 			onClick={() => changeFilter(filter)}
+			data-testid={dataTestId}
 		>
 			{title}
 		</button>

@@ -3,7 +3,7 @@ import { Todolist } from '../components';
 
 import styles from './App.module.scss';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
 	return (
 		<div className={styles.app}>
 			<div className={styles.todolists}>

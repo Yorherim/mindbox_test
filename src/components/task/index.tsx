@@ -11,14 +11,15 @@ export const Task: React.FC<TaskPropsType> = ({
 	toggleTaskCompleted,
 }) => {
 	return (
-		<div className={styles.task}>
+		<div className={styles.task} data-testid="task">
 			<input
 				type="checkbox"
 				checked={completed}
 				className={styles.checkBox}
 				onChange={() => toggleTaskCompleted(taskId)}
+				data-testid="checkbox task"
 			/>
-			{completed && <div className={styles.checkIcon}></div>}
+			{completed && <div className={styles.checkIcon} data-testid="completed task icon"></div>}
 			<span className={clsx(styles.taskTitle, completed && styles.checked)}>{title}</span>
 		</div>
 	);

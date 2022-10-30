@@ -56,8 +56,10 @@ export const Todolist: React.FC = () => {
 			: tasks.filter((task) => task.completed);
 
 	return (
-		<div className={styles.todolist}>
-			<span className={styles.title}>todos</span>
+		<div className={styles.todolist} data-testid="todolist">
+			<span className={styles.title} data-testid="todolist title">
+				todos
+			</span>
 			<div className={styles.tasks}>
 				<div className={styles.textField}>
 					<input
@@ -66,8 +68,13 @@ export const Todolist: React.FC = () => {
 						onChange={actions.changeNewTaskTitle}
 						onKeyDown={actions.createTaskKeyboardHandler}
 						placeholder="What's need to be done?"
+						data-testid="todolist input"
 					/>
-					<button className={styles.button} onClick={actions.createTaskHandler}>
+					<button
+						className={styles.button}
+						onClick={actions.createTaskHandler}
+						data-testid="add a new task btn"
+					>
 						+
 					</button>
 				</div>
@@ -78,7 +85,7 @@ export const Todolist: React.FC = () => {
 						taskId={task.id}
 						title={task.title}
 						completed={task.completed}
-						toggleTaskCompleted={toggleTaskCompleted!}
+						toggleTaskCompleted={toggleTaskCompleted}
 					/>
 				))}
 
@@ -87,11 +94,13 @@ export const Todolist: React.FC = () => {
 						{tasks.length} {tasks.length > 1 ? 'items' : 'item'} left
 					</span>
 					<div className={styles.buttonsFilter}>
-						<FilterButton title={'All'} filter={'all'} />
-						<FilterButton title={'Active'} filter={'active'} />
-						<FilterButton title={'Completed'} filter={'completed'} />
+						<FilterButton title={'All'} filter={'all'} dataTestId="filter all" />
+						<FilterButton title={'Active'} filter={'active'} dataTestId="filter active" />
+						<FilterButton title={'Completed'} filter={'completed'} dataTestId="filter completed" />
 					</div>
-					<button onClick={() => clearCompletedTasks()}>Clear completed</button>
+					<button onClick={() => clearCompletedTasks()} data-testid="clear button">
+						Clear completed
+					</button>
 				</div>
 			</div>
 		</div>
